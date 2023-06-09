@@ -29,7 +29,7 @@ stock_highlights_list = []
 data = {}
 
 # URL of the web page to scrape
-url = "https://www.beforward.jp/volkswagen/up-/bn467795/id/4926174/"
+url = "https://www.beforward.jp/daihatsu/terios-kid/bk627823/id/3132253/"
 
 # response
 response = requests.get(url, headers=headers, timeout=5)
@@ -67,7 +67,7 @@ for getImages in image_elements:
 # Car Price
 # car_price_section = page.find_all("div", class_="price-col-vehicle-link-area")
 # print(car_price_section)
-car_price = page.find("span", class_="ip-usd-price")
+car_price = page.select(".vehicle-price").find("span").text.strip()
 print(car_price)
 # stock_price.append(car_price)
 # car_total_price = page.find_all("p", class_="total-price")

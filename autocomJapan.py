@@ -49,8 +49,7 @@ for url in urls:
 
     # stock title name
     try:
-        car_title = page.find("div", class_="car_title").find("h1").text.strip()
-        print(car_title)
+        car_title = page.find_all("div", class_="car_title").find("h1").text.strip()
         car_title = car_title.replace("\xa0", " ")  # Remove the 'Â' character
     except:
         car_title = None
